@@ -3,13 +3,13 @@
 
 <%= 1+1 %>
 
-<br/>
+<br />
 
 <% name = "Finn" %>
 <%= "Hello #{name}" %>
 
-<br/>
+<br />
 
-<% 3.times do %>
- <%= "test" %>
+<% @array.each do |n| %>
+ <%= n %><br />
 <% end %>
