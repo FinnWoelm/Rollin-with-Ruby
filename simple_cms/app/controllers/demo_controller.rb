@@ -8,4 +8,8 @@ class DemoController < ApplicationController
   def hello
   end
 
+  def other_hello
+    redirect_to( :controller => 'demo', :action => 'hello')
+  end
+
 end
