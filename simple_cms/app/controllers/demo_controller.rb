@@ -12,4 +12,8 @@ class DemoController < ApplicationController
     redirect_to( :controller => 'demo', :action => 'hello')
   end
 
+  def google
+    redirect_to('http://www.google.com/')
+  end
+
 end
