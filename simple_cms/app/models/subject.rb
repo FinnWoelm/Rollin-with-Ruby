@@ -1,4 +1,10 @@
 class Subject < ActiveRecord::Base
+  
+  # all the relationships
+  has_many :pages
+
+
+  # all the scopes
 
   scope :visible, lambda { where(:visible => true) }
 
