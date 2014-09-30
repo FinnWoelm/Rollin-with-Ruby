@@ -16,7 +16,6 @@ class SubjectsController < ApplicationController
 
   def create
     # Instantiate a new object using the form parameters
-    
     @subject =  Subject.new(subject_params)
     # Save the object
     if @subject.save
@@ -29,6 +28,20 @@ class SubjectsController < ApplicationController
   end
 
   def edit
+    @subject = Subject.find(params[:id])
+  end
+
+  def update
+    # Find an existing object using the form parameters
+    @subject =  Subject.find(params[:id])
+    # Update the object
+    if @subject.update_attributes(subject_params)
+       # If update succeeds, redirect to index
+       redirect_to(:action => 'show', :id => @subject.id)
+    else
+       # If update fails, redisplay the form so user can fix problems
+       render('edit')
+    end
   end
 
   def delete
