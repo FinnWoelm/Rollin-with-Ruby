@@ -6,3 +6,9 @@
 
 <%= link_to('Hello page 3', {:action => 'hello', :id => 20, :page =>  5}) %>
 
+<br />
+<% name = "Sorry!'); alert('I hacked you" %>
+
+<%= link_to('Roar', '#', :onclick => "jsRoar('#{j(name)}'); return true;") %>
+
+<%= javascript_tag("jsRoar('#{j(name)}');") %>
